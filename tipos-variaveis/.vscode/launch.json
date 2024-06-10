@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ExercicioTiposVariaveis",
+            "request": "launch",
+            "mainClass": "ExercicioTiposVariaveis",
+            "projectName": "tipos-variaveis_83d6b58d"
+        },
+        {
+            "type": "java",
+            "name": "ExercicioOperadores",
+            "request": "launch",
+            "mainClass": "ExercicioOperadores",
+            "projectName": "tipos-variaveis_83d6b58d"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
