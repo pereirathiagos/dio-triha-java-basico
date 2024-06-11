@@ -1,4 +1,3 @@
-import java.util.Locale;
 import java.util.Scanner;
 
 public class ContaTerminal {
@@ -9,17 +8,41 @@ public class ContaTerminal {
         String agencia = scanner.nextLine();
 
         System.out.println("Por favor, digite o número da Conta:");
-        int numero = scanner.nextInt();
-        scanner.nextLine();
+        String numeroContaStr = scanner.nextLine();
+        int numeroConta = 0;
+
+        
+        String numeroContaLimpo = numeroContaStr.replaceAll("[^\\d]", "");
+
+        try {
+            
+            numeroConta = Integer.parseInt(numeroContaLimpo);
+        } catch (NumberFormatException e) {
+            System.out.println("Número da Conta inválido. Por favor, insira apenas números.");
+            System.exit(1);
+        }
+
         System.out.println("Por favor, digite o nome do Cliente:");
         String nomeCliente = scanner.nextLine();
 
         System.out.println("Por favor, digite o saldo da Conta:");
-        double saldo = scanner.nextDouble();
+        String saldoStr = scanner.nextLine();
+        double saldo = 0;
 
-        // Exibindo a mensagem final com os dados inseridos
+       
+        String saldoLimpo = saldoStr.replaceAll("[^\\d.]", "");
+
+        try {
+            
+            saldo = Double.parseDouble(saldoLimpo);
+        } catch (NumberFormatException e) {
+            System.out.println("Saldo inválido. Por favor, insira um valor numérico válido.");
+            System.exit(1);
+        }
+
+       
         System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, sua agência é " +
-                agencia + ", conta " + numero + " e seu saldo " + saldo + " já está disponível para saque.");
+                agencia + ", conta " + numeroConta + " e seu saldo " + saldo + " já está disponível para saque.");
 
         scanner.close();
     }
